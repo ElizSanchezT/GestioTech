@@ -2,6 +2,7 @@ package Principal;
 
 import Entidades.TipoTransaccion;
 import Entidades.Transaccion;
+import LogicaNegocio.ManejadorTransacciones;
 import Utilitarios.UtilitariosConsola;
 import Utilitarios.UtilitariosEnum;
 
@@ -11,9 +12,10 @@ import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
-        List<Transaccion> transacciones = new ArrayList<>();
+
         int opcion;
         int subOpcion;
+        ManejadorTransacciones manejadorTransacciones = new ManejadorTransacciones();
         do {
             UtilitariosConsola.ImprimirTitulo("GestioTech Solutions S.A.");
             UtilitariosConsola.ImprimirMenu(Arrays.asList("Transacciones", "Informes financieros", "Gestión de Presupuesto", "Alertas y recordatorios"), "Salir");
@@ -27,24 +29,11 @@ public class Principal {
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
                         switch (subOpcion){
                             case 1:
-                                //TODO Refactorizar esta parte para que esta lógica esté en alguna clase encargada de manejar las transacciones, y hacer lo mismo con las otras opciones
-                                UtilitariosConsola.ImprimirTitulo("Registar transacción", 40);
-                                System.out.println("Ingrese Tipo");
-                                TipoTransaccion tipo = UtilitariosEnum.MostrarSeleccionParaEnum(TipoTransaccion.values());
-                                String descripcion = UtilitariosConsola.LeerCadenaConMensaje("Ingrese descripción");
-                                String fecha = UtilitariosConsola.LeerCadenaConMensaje("Ingrese fecha");
-                                double monto = UtilitariosConsola.LeerDecimalConMensaje("Ingrese monto");
-                                transacciones.add(new Transaccion(tipo, descripcion, monto, fecha));
-                                System.out.println("Transacción agregada exitosamente");
+                                manejadorTransacciones.registrarTransaccion();
                                 break;
                             case 2:
-                                UtilitariosConsola.ImprimirTitulo("Seguimiento de transacciones");
-                                if(transacciones.size() == 0){
-                                    System.out.println("Aún no se han registrado transacciones");
-                                }
-                                for(Transaccion transaccion : transacciones){
-                                    System.out.println(transaccion);
-                                }
+                                manejadorTransacciones.imprimirTransacciones();
+                                break;
                         }
                     }while(subOpcion != 3);
                     break;
