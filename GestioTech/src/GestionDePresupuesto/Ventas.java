@@ -7,6 +7,7 @@ public class Ventas extends Departamento {
         super(empleadosDpto, fondoPresupuestal, gastosFijos);
     }
 
+    //this.fondoPresupuestal = 18000;
     public String nombreDepartamento() {
         return "Ventas";
     }

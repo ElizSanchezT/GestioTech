@@ -48,6 +48,7 @@ public class Principal {
                     break;
                 case 3:
                     do {
+                        //Al momento de realizar la gestion de presupuestos se lee el archivo de planilla y se almacenan los Empleados en la PlanillaDeEmpleados
                         String fileName = "planilla.txt";  // Replace with the actual file name and path
 
                         PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
@@ -83,26 +84,35 @@ public class Principal {
                                             //planilla.imprimirPlanilla();
                                             dpto1.imprimirPlanillaDpto();
                                             dpto1.calcularTotalSueldos();
+                                            dpto1.imprimirPresupuesto();
                                             break;
                                         case 2:
                                             Departamento dpto2 = new Finanzas(null,0,null);
                                             dpto2.listaDeEmpleadosxDpto(planilla);
                                             dpto2.imprimirPlanillaDpto();
+                                            dpto2.calcularTotalSueldos();
+                                            dpto2.imprimirPresupuesto();
                                             break;
                                         case 3:
                                             Departamento dpto3 = new Direccion(null,0,null);
                                             dpto3.listaDeEmpleadosxDpto(planilla);
                                             dpto3.imprimirPlanillaDpto();
+                                            dpto3.calcularTotalSueldos();
+                                            dpto3.imprimirPresupuesto();
                                             break;
                                         case 4:
                                             Departamento dpto4 = new Ventas(null,0,null);
                                             dpto4.listaDeEmpleadosxDpto(planilla);
                                             dpto4.imprimirPlanillaDpto();
+                                            dpto4.calcularTotalSueldos();
+                                            dpto4.imprimirPresupuesto();
                                             break;
                                         case 5:
                                             Departamento dpto5 = new Marketing(null,200,null);
                                             dpto5.listaDeEmpleadosxDpto(planilla);
                                             dpto5.imprimirPlanillaDpto();
+                                            dpto5.calcularTotalSueldos();
+                                            dpto5.imprimirPresupuesto();
                                             break;
                                     } //while (subOpcion != 6);
                                 } while (subOpcion != 5);
