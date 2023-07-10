@@ -22,6 +22,7 @@ public class Principal {
             UtilitariosConsola.ImprimirTitulo("GestioTech Solutions S.A.");
             UtilitariosConsola.ImprimirMenu(Arrays.asList("Transacciones", "Informes financieros", "Gestión de Presupuesto","Ver empleados"), "Salir");
             opcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción:");
+            //Se lee el archivo txt de planilla el cual se usa para gestion de presupuesto (3) y ver empleados (4)
             PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
             planilla.cargarListaEmpleados("planilla.txt");
 
@@ -50,13 +51,6 @@ public class Principal {
                     break;
                 case 3:
                     do {
-                        //Al momento de realizar la gestion de presupuestos se lee el archivo de planilla
-                        //En planilla.txt hay una lista de empleados que tienen distintos atributos.
-
-                        //PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
-                        //planilla.cargarListaEmpleados("planilla.txt");
-
-                        //planilla.imprimirPlanilla();
                         UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos");
                         UtilitariosConsola.ImprimirMenu(Arrays.asList("Presupuesto general", "Por departamento"));
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
