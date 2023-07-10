@@ -10,6 +10,7 @@ import GestionDePresupuesto.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.io.File;
 
 public class Principal {
     public static void main(String[] args) {
@@ -52,13 +53,15 @@ public class Principal {
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
                         switch (subOpcion) {
                             case 1:
+                                /*System.out.println(new File(" ").getAbsolutePath());
+                                File file = new File("planilla.txt");
+                                System.out.println(file.exists());*/
                                 String fileName = "planilla.txt";  // Replace with the actual file name and path
 
-                                PlanillaDeEmpleados planillaDeEmpleados = new PlanillaDeEmpleados();
-                                planillaDeEmpleados.cargarListaEmpleados("planilla.txt");
+                                PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
+                                planilla.cargarListaEmpleados("planilla.txt");
 
-                                List<Empleado> empleados = planillaDeEmpleados.getEmpleados();
-                                empleados.toString();
+                                planilla.imprimirPlanilla();
                                 break;
                             case 2:
                                 do {

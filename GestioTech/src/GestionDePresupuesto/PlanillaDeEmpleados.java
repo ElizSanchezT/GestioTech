@@ -38,14 +38,17 @@ public class PlanillaDeEmpleados {
         }
     }
 
-    public List<Empleado> getEmpleados() {
+    public List<Empleado> getPlanilla() {
         return empleados;
     }
 
-    @Override
-    public String toString() {
-        return "PlanillaDeEmpleados{" +
-                "empleados=" + empleados +
-                '}';
+    public void imprimirPlanilla() {
+        for (Empleado e : empleados) {
+            System.out.println("Nombre: " + e.getNombreEmpleado());
+            System.out.println("Departamento: " + e.getDptoEmpleado());
+            System.out.println("Posición: " + e.getPosicionEmpleado());
+            System.out.println("Sueldo: " + e.getSueldoEmpleado());
+            System.out.println("----------------------");
+        }
     }
 }
