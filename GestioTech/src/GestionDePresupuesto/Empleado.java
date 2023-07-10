@@ -1,5 +1,6 @@
 package GestionDePresupuesto;
 
+import java.util.*;
 public class Empleado {
     private String nombreEmpleado;
     private String dptoEmpleado;
@@ -28,6 +29,5 @@ public class Empleado {
     public int getSueldoEmpleado() {
         return sueldoEmpleado;
     }
-
 
 }
