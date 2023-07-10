@@ -32,11 +32,12 @@ public abstract class Departamento {
     }
 
     public double calcularTotalSueldos() {
+        // Método que calcula el total de sueldos
         double totalSueldosenDpto = 0;
         for (Empleado e : empleadosDpto) {
             totalSueldosenDpto = totalSueldosenDpto + e.getSueldoEmpleado();
         }
-        System.out.println(totalSueldosenDpto);
+        //System.out.println(totalSueldosenDpto);
         return totalSueldosenDpto;
     }
 
@@ -50,4 +51,17 @@ public abstract class Departamento {
         }
     }
 
+    public double calcularPresupuesto() {
+        double presupuestoTotal = 0;
+        double gastosFijos = calcularTotalSueldos();
+        presupuestoTotal = fondoPresupuestal - gastosFijos;
+        return presupuestoTotal;
+    }
+
+    public void imprimirPresupuesto() {
+        System.out.println("Fondo presupuestal (S/.):\t" + fondoPresupuestal);
+        System.out.println("Gastos fijos (S/.):\t\t" + calcularTotalSueldos() + "\t-");
+        System.out.println("-------------------------------------------------");
+        System.out.println("Presupuesto total (S/.)\t\t" + calcularPresupuesto());
+    }
 }

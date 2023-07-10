@@ -1,4 +1,4 @@
-Miriam Céspedes,Direccion,Gerente General,10000
+Miriam Céspedes,Direccion,Gerente General,9000
 Cecilia Pizarro,Direccion,Secretaria,2200
 Rommel Risquez,Atencion Al Cliente,Team Lead,2500
 Yeferson Quispe,Atencion Al Cliente,Agente,1800
