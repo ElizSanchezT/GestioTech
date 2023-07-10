@@ -5,6 +5,7 @@ import Entidades.Transaccion;
 import LogicaNegocio.ManejadorTransacciones;
 import Utilitarios.UtilitariosConsola;
 import Utilitarios.UtilitariosEnum;
+import GestionDePresupuesto.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,7 +52,13 @@ public class Principal {
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
                         switch (subOpcion) {
                             case 1:
-                                System.out.println("Test1");
+                                String fileName = "planilla.txt";  // Replace with the actual file name and path
+
+                                PlanillaDeEmpleados planillaDeEmpleados = new PlanillaDeEmpleados();
+                                planillaDeEmpleados.cargarListaEmpleados("planilla.txt");
+
+                                List<Empleado> empleados = planillaDeEmpleados.getEmpleados();
+                                empleados.toString();
                                 break;
                             case 2:
                                 do {

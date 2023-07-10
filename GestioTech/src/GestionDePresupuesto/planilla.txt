@@ -1,0 +1,11 @@
+Miriam Céspedes,Direccion,Gerente General,10000
+Cecilia Pizarro,Direccion,Secretaria,2200
+Rommel Risquez,Atencion Al Cliente,Team Lead,2500
+Yeferson Quispe,Atencion Al Cliente,Agente,1800
+Linda Loayza,Atencion Al Cliente,Agente,1800
+Jorge Smith,Ventas,Gerente Territorial de Ventas,8000
+Pedro Parque,Ventas,Representante de Ventas,2000
+Maria Gabriela Pacheco,Ventas,Representante de Ventas,2000
+Sandy Terrence,Marketing,Especialista de Marketing,2500
+Jimena Pacheco,Finanzas,Contador,2700
+Laureano Quevedo,Finanzas,Asistente Contable,1850
