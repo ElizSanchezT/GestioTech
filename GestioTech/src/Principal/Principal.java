@@ -20,8 +20,10 @@ public class Principal {
         ManejadorTransacciones manejadorTransacciones = new ManejadorTransacciones();
         do {
             UtilitariosConsola.ImprimirTitulo("GestioTech Solutions S.A.");
-            UtilitariosConsola.ImprimirMenu(Arrays.asList("Transacciones", "Informes financieros", "Gestión de Presupuesto"), "Salir");
+            UtilitariosConsola.ImprimirMenu(Arrays.asList("Transacciones", "Informes financieros", "Gestión de Presupuesto","Ver empleados"), "Salir");
             opcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción:");
+            PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
+            planilla.cargarListaEmpleados("planilla.txt");
 
             switch (opcion) {
                 case 1:
@@ -51,8 +53,8 @@ public class Principal {
                         //Al momento de realizar la gestion de presupuestos se lee el archivo de planilla
                         //En planilla.txt hay una lista de empleados que tienen distintos atributos.
 
-                        PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
-                        planilla.cargarListaEmpleados("planilla.txt");
+                        //PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
+                        //planilla.cargarListaEmpleados("planilla.txt");
 
                         //planilla.imprimirPlanilla();
                         UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos");
@@ -130,7 +132,10 @@ public class Principal {
                                 } while (subOpcion != 6);
                         }
                     } while (subOpcion != 3);
+                case 4:
+                    planilla.imprimirPlanilla();
+                    break;
             }
-        }while(opcion != 4);
+        }while(opcion != 5);
     }
 }
