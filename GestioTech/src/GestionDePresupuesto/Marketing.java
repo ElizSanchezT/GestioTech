@@ -5,11 +5,13 @@ import java.util.List;
 public class Marketing extends Departamento {
 
 
-    public Marketing(List<Empleado> empleadosDpto, double fondoPresupuestal, List<String> gastosFijos) {
-        super(empleadosDpto, fondoPresupuestal, gastosFijos);
+    public Marketing(List<Empleado> empleadosDpto) {
+        super(empleadosDpto);
     }
 
-    //this.fondoPresupuestal = 4000;
+    public double fondoPresupuestal() {
+        return 4000;
+    }
     public String nombreDepartamento() {
         return "Marketing";
     }

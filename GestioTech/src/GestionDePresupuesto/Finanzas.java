@@ -4,13 +4,16 @@ import java.util.*;
 
 public class Finanzas extends Departamento {
 
-    public Finanzas(List<Empleado> empleadosDpto, double fondoPresupuestal, List<String> gastosFijos) {
-        super(empleadosDpto, fondoPresupuestal, gastosFijos);
+    public Finanzas(List<Empleado> empleadosDpto) {
+        super(empleadosDpto);
     }
 
-    //this.fondoPresupuestal = 8000;
     public String nombreDepartamento() {
         return "Finanzas";
+    }
+
+    public double fondoPresupuestal() {
+        return 8000;
     }
 
     /*@Override
