@@ -5,9 +5,9 @@ public class Empleado {
     private String nombreEmpleado;
     private String dptoEmpleado;
     private String posicionEmpleado;
-    private int sueldoEmpleado;
+    private double sueldoEmpleado;
 
-    public Empleado(String nombreEmpleado, String dptoEmpleado, String posicionEmpleado, int sueldoEmpleado) {
+    public Empleado(String nombreEmpleado, String dptoEmpleado, String posicionEmpleado, double sueldoEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.dptoEmpleado = dptoEmpleado;
         this.posicionEmpleado = posicionEmpleado;
@@ -26,7 +26,7 @@ public class Empleado {
         return posicionEmpleado;
     }
 
-    public int getSueldoEmpleado() {
+    public double getSueldoEmpleado() {
         return sueldoEmpleado;
     }
 

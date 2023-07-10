@@ -78,23 +78,24 @@ public class Principal {
 
                                     switch (subOpcion) {
                                         case 1:
-                                            Departamento dpto1 = new AtencionAlCliente(null,200,null);
+                                            Departamento dpto1 = new AtencionAlCliente(null,0,null);
                                             dpto1.listaDeEmpleadosxDpto(planilla);
                                             //planilla.imprimirPlanilla();
                                             dpto1.imprimirPlanillaDpto();
+                                            dpto1.calcularTotalSueldos();
                                             break;
                                         case 2:
-                                            Departamento dpto2 = new Finanzas(null,200,null);
+                                            Departamento dpto2 = new Finanzas(null,0,null);
                                             dpto2.listaDeEmpleadosxDpto(planilla);
                                             dpto2.imprimirPlanillaDpto();
                                             break;
                                         case 3:
-                                            Departamento dpto3 = new Direccion(null,200,null);
+                                            Departamento dpto3 = new Direccion(null,0,null);
                                             dpto3.listaDeEmpleadosxDpto(planilla);
                                             dpto3.imprimirPlanillaDpto();
                                             break;
                                         case 4:
-                                            Departamento dpto4 = new Ventas(null,200,null);
+                                            Departamento dpto4 = new Ventas(null,0,null);
                                             dpto4.listaDeEmpleadosxDpto(planilla);
                                             dpto4.imprimirPlanillaDpto();
                                             break;

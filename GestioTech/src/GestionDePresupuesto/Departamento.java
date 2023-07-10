@@ -14,8 +14,8 @@ public abstract class Departamento {
 
     public abstract String nombreDepartamento(); //En cada clase hija se específica el nombre del dpto para comparar
     public void listaDeEmpleadosxDpto(PlanillaDeEmpleados planilla) {
-        //Método que compara los departamentos a partir de la planilla de trabajadores y si son del dpto correspondiente
-        //los agrega a la lista de trabajadores de un departamento en específico
+        //Método que compara los departamentos de cada empleado a partir de la planilla. Si son del dpto correspondiente
+        //al que se solicita en menú, los agrega a la lista de trabajadores de un departamento en específico.
 
         //System.out.println(this.nombreDepartamento());
         empleadosDpto = new ArrayList<>();
@@ -29,6 +29,15 @@ public abstract class Departamento {
                 empleadosDpto.add(e);
             }
         }
+    }
+
+    public double calcularTotalSueldos() {
+        double totalSueldosenDpto = 0;
+        for (Empleado e : empleadosDpto) {
+            totalSueldosenDpto = totalSueldosenDpto + e.getSueldoEmpleado();
+        }
+        System.out.println(totalSueldosenDpto);
+        return totalSueldosenDpto;
     }
 
     public void imprimirPlanillaDpto() {
