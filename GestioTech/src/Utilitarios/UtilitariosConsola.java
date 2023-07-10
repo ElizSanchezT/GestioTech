@@ -81,4 +81,11 @@ public class UtilitariosConsola {
         }
     }
 
+    public static void ImprimirPresupuestoTotal(double fondos, double gastos, double presupuestoTotal) {
+        System.out.println("Fondo presupuestal (S/.):\t" + fondos);
+        System.out.println("Gastos fijos (S/.):\t\t" + gastos + "\t-");
+        System.out.println("-------------------------------------------------");
+        System.out.println("Presupuesto total (S/.)\t\t" + presupuestoTotal +"\n");
+    }
+
 }

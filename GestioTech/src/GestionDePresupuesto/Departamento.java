@@ -3,13 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 public abstract class Departamento {
     protected List<Empleado> empleadosDpto;
-    protected double fondoPresupuestal;
-    protected List<String> gastosFijos;
 
-    public Departamento(List<Empleado> empleadosDpto, double fondoPresupuestal, List<String> gastosFijos) {
+    public Departamento(List<Empleado> empleadosDpto) {
         this.empleadosDpto = empleadosDpto;
-        this.fondoPresupuestal = fondoPresupuestal;
-        this.gastosFijos = gastosFijos;
     }
 
     public abstract String nombreDepartamento(); //En cada clase hija se específica el nombre del dpto para comparar
@@ -51,15 +47,16 @@ public abstract class Departamento {
         }
     }
 
+    public abstract double fondoPresupuestal(); //En cada clase hija se específica el fondo presupuestal por c/dpto
     public double calcularPresupuesto() {
         double presupuestoTotal = 0;
         double gastosFijos = calcularTotalSueldos();
-        presupuestoTotal = fondoPresupuestal - gastosFijos;
+        presupuestoTotal = fondoPresupuestal() - gastosFijos;
         return presupuestoTotal;
     }
 
     public void imprimirPresupuesto() {
-        System.out.println("Fondo presupuestal (S/.):\t" + fondoPresupuestal);
+        System.out.println("Fondo presupuestal (S/.):\t" + fondoPresupuestal());
         System.out.println("Gastos fijos (S/.):\t\t" + calcularTotalSueldos() + "\t-");
         System.out.println("-------------------------------------------------");
         System.out.println("Presupuesto total (S/.)\t\t" + calcularPresupuesto());
