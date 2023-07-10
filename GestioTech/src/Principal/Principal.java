@@ -29,7 +29,7 @@ public class Principal {
                         UtilitariosConsola.ImprimirTitulo("Transacciones", 40);
                         UtilitariosConsola.ImprimirMenu(Arrays.asList("Registrar Transacción", "Realizar seguimiento de Transacción"));
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
-                        switch (subOpcion){
+                        switch (subOpcion) {
                             case 1:
                                 manejadorTransacciones.registrarTransaccion();
                                 break;
@@ -37,37 +37,73 @@ public class Principal {
                                 manejadorTransacciones.imprimirTransacciones();
                                 break;
                         }
-                    }while(subOpcion != 3);
+                    } while (subOpcion != 3);
                     break;
                 case 2:
                     do {
                         UtilitariosConsola.ImprimirTitulo("Informes Financieros");
                         UtilitariosConsola.ImprimirMenu(Arrays.asList("Balance General", "Estado de Ganancias y pérdidas"));
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
-                    }while(subOpcion != 3);
+                    } while (subOpcion != 3);
                     break;
                 case 3:
                     do {
+                        String fileName = "planilla.txt";  // Replace with the actual file name and path
+
+                        PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
+                        planilla.cargarListaEmpleados("planilla.txt");
+
+                        planilla.imprimirPlanilla();
                         UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos");
                         UtilitariosConsola.ImprimirMenu(Arrays.asList("Presupuesto general", "Por departamento"));
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
+
                         switch (subOpcion) {
                             case 1:
                                 /*System.out.println(new File(" ").getAbsolutePath());
                                 File file = new File("planilla.txt");
-                                System.out.println(file.exists());*/
+                                System.out.println(file.exists());
                                 String fileName = "planilla.txt";  // Replace with the actual file name and path
 
                                 PlanillaDeEmpleados planilla = new PlanillaDeEmpleados();
                                 planilla.cargarListaEmpleados("planilla.txt");
 
-                                planilla.imprimirPlanilla();
+                                planilla.imprimirPlanilla();*/
                                 break;
                             case 2:
                                 do {
                                     UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos por Departamento");
-                                    UtilitariosConsola.ImprimirMenu(Arrays.asList("Atención al cliente", "Control financiero", "Dirección", "Ventas"));
+                                    UtilitariosConsola.ImprimirMenu(Arrays.asList("Atención al cliente", "Finanzas", "Dirección", "Ventas"));
                                     subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
+
+                                    switch (subOpcion) {
+                                        case 1:
+                                            Departamento dpto1 = new AtencionAlCliente(null,200,null);
+                                            dpto1.listaDeEmpleadosxDpto(planilla);
+                                            //planilla.imprimirPlanilla();
+                                            dpto1.imprimirPlanillaDpto();
+                                            break;
+                                        case 2:
+                                            Departamento dpto2 = new Finanzas(null,200,null);
+                                            dpto2.listaDeEmpleadosxDpto(planilla);
+                                            dpto2.imprimirPlanillaDpto();
+                                            break;
+                                        case 3:
+                                            Departamento dpto3 = new Direccion(null,200,null);
+                                            dpto3.listaDeEmpleadosxDpto(planilla);
+                                            dpto3.imprimirPlanillaDpto();
+                                            break;
+                                        case 4:
+                                            Departamento dpto4 = new Ventas(null,200,null);
+                                            dpto4.listaDeEmpleadosxDpto(planilla);
+                                            dpto4.imprimirPlanillaDpto();
+                                            break;
+                                        case 5:
+                                            Departamento dpto5 = new Marketing(null,200,null);
+                                            dpto5.listaDeEmpleadosxDpto(planilla);
+                                            dpto5.imprimirPlanillaDpto();
+                                            break;
+                                    } //while (subOpcion != 6);
                                 } while (subOpcion != 5);
                         }
                     } while (subOpcion != 3);
