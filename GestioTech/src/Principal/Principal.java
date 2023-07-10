@@ -44,6 +44,23 @@ public class Principal {
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
                     }while(subOpcion != 3);
                     break;
+                case 3:
+                    do {
+                        UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos");
+                        UtilitariosConsola.ImprimirMenu(Arrays.asList("Presupuesto general", "Por departamento"));
+                        subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
+                        switch (subOpcion) {
+                            case 1:
+                                System.out.println("Test1");
+                                break;
+                            case 2:
+                                do {
+                                    UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos por Departamento");
+                                    UtilitariosConsola.ImprimirMenu(Arrays.asList("Atención al cliente", "Control financiero", "Dirección", "Ventas"));
+                                    subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
+                                } while (subOpcion != 5);
+                        }
+                    } while (subOpcion != 3);
             }
         }while(opcion != 5);
     }
