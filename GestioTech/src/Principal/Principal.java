@@ -6,6 +6,7 @@ import LogicaNegocio.ManejadorTransacciones;
 import Utilitarios.UtilitariosConsola;
 import Utilitarios.UtilitariosEnum;
 import GestionDePresupuesto.*;
+import InformesFinancieros.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,6 +48,25 @@ public class Principal {
                         UtilitariosConsola.ImprimirTitulo("Informes Financieros");
                         UtilitariosConsola.ImprimirMenu(Arrays.asList("Balance General", "Estado de Ganancias y pérdidas"));
                         subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
+                        switch (subOpcion) {
+                            case 1:
+                                System.out.println("Generando Balance General...");
+                                InformesFinancieros.BalanceGeneral balanceGeneral = new InformesFinancieros.BalanceGeneral();
+                                BalanceGeneral.main(new String[]{});
+                                break;
+                            case 2:
+                                System.out.println("Generando Estado de Ganancias y Pérdidas...");
+                                InformesFinancieros.EstadoGananciasPerdidas estadoGananciasPerdidas = new InformesFinancieros.EstadoGananciasPerdidas();
+                                estadoGananciasPerdidas.main(new String[]{});
+                                break;
+                            case 3:
+                                System.out.println("Volviendo al menú principal");
+                                break;
+                            default:
+                                System.out.println("Opción inválida");
+                                break;
+                        }
+
                     } while (subOpcion != 3);
                     break;
                 case 3:
