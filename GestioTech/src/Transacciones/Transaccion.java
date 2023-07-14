@@ -7,6 +7,14 @@ public abstract class Transaccion {
     protected double monto;
     protected LocalDate fecha;
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public double getMonto() {
+        return monto;
+    }
+
     public Transaccion(){
 
     }

@@ -51,7 +51,8 @@ public class Principal {
                             case 2:
                                 System.out.println("Generando Estado de Ganancias y Pérdidas...");
                                 InformesFinancieros.EstadoGananciasPerdidas estadoGananciasPerdidas = new InformesFinancieros.EstadoGananciasPerdidas();
-                                estadoGananciasPerdidas.main(new String[]{});
+                                estadoGananciasPerdidas.agregarDesdeTransacciones(manejadorTransacciones.getTransacciones());
+                                estadoGananciasPerdidas.inicializar();
                                 break;
                             case 3:
                                 System.out.println("Volviendo al menú principal");
