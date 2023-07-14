@@ -7,7 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManejadorTransacciones {
-    List<Transaccion> transacciones;
+    private List<Transaccion> transacciones;
+    public List<Transaccion> getTransacciones() {
+        return transacciones;
+    }
     public ManejadorTransacciones() {
         transacciones = new ArrayList<>();
     }

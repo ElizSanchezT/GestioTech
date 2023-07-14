@@ -1,6 +1,11 @@
 package InformesFinancieros;
 
+import Transacciones.Ingreso;
+import Transacciones.Salida;
+import Transacciones.Transaccion;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EstadoGananciasPerdidas {
@@ -19,6 +24,16 @@ public class EstadoGananciasPerdidas {
 
     public void agregarGasto(String concepto, double monto) {
         gastos.put(concepto, monto);
+    }
+
+    public void agregarDesdeTransacciones(List<Transaccion> transacciones){
+        for(Transaccion transaccion : transacciones) {
+            if (transaccion instanceof Ingreso) {
+                agregarIngreso(transaccion.getDescripcion(), transaccion.getMonto());
+            } else if (transaccion instanceof Salida) {
+                agregarGasto(transaccion.getDescripcion(), transaccion.getMonto());
+            }
+        }
     }
 
     public void mostrarEstadoGananciasPerdidas() {
@@ -56,15 +71,14 @@ public class EstadoGananciasPerdidas {
         return total;
     }
 
-    public static void main(String[] args) {
-        EstadoGananciasPerdidas estado = new EstadoGananciasPerdidas();
-        estado.agregarIngreso("Ventas", 50000.0);
-        estado.agregarIngreso("Intereses", 1000.0);
+    public void inicializar(){
+        agregarIngreso("Ventas", 50000.0);
+        agregarIngreso("Intereses", 1000.0);
 
-        estado.agregarGasto("Sueldos", 20000.0);
-        estado.agregarGasto("Alquiler", 5000.0);
-        estado.agregarGasto("Publicidad", 3000.0);
+        agregarGasto("Sueldos", 20000.0);
+        agregarGasto("Alquiler", 5000.0);
+        agregarGasto("Publicidad", 3000.0);
 
-        estado.mostrarEstadoGananciasPerdidas();
+        mostrarEstadoGananciasPerdidas();
     }
 }
