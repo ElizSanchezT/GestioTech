@@ -1,17 +1,11 @@
 package Principal;
 
-import Entidades.TipoTransaccion;
-import Entidades.Transaccion;
-import LogicaNegocio.ManejadorTransacciones;
+import Transacciones.ManejadorTransacciones;
 import Utilitarios.UtilitariosConsola;
-import Utilitarios.UtilitariosEnum;
 import GestionDePresupuesto.*;
 import InformesFinancieros.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.io.File;
 
 public class Principal {
     public static void main(String[] args) {

@@ -1,5 +1,8 @@
 package Utilitarios;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,6 +40,42 @@ public class UtilitariosConsola {
             }
         }
     }
+    public static LocalDate LeerFechaConMensaje(String mensaje) {
+        System.out.println(mensaje);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        while (true) {
+            String entrada = _scanner.nextLine();
+            try {
+                LocalDate fecha = LocalDate.parse(entrada, formatter);
+                return fecha;
+            } catch (DateTimeParseException ex) {
+                System.out.println("Ingrese una fecha con formato válido (dd/mm/aaaa)");
+            }
+        }
+    }
+
+    public static boolean LeerBoolConMensaje(String mensaje) {
+        return LeerBoolConMensaje(mensaje, "S" , "N");
+    }
+
+    public static boolean LeerBoolConMensaje(String mensaje, String opcionVerdad, String opcionFalsedad) {
+        System.out.println(mensaje + "(" + opcionVerdad + " o " + opcionFalsedad + ")");
+        String opc = "";
+        while (opc!= opcionFalsedad || opcionFalsedad != opcionVerdad) {
+            opc = _scanner.nextLine();
+            if(opc.equals(opcionVerdad)){
+                return true;
+            }
+            if(opc.equals(opcionFalsedad)){
+                return false;
+            }
+            else{
+                System.out.println("Ingrese una opción válida");
+            }
+        }
+        return false;
+    }
 
     public static void ImprimirTitulo(String titulo) {
         ImprimirTitulo(titulo, 100);
@@ -71,14 +110,6 @@ public class UtilitariosConsola {
             System.out.println((i+1) + "." + " " + opciones.get(i));
         }
         System.out.println((opciones.size()+1) + "." + " " + ultimaOpcion);
-    }
-
-    public static void LimpiarConsola(){
-        try {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch (Exception e) {
-
-        }
     }
 
     public static void ImprimirPresupuestoTotal(double fondos, double gastos, double presupuestoTotal) {

@@ -8,8 +8,6 @@ public class Direccion extends Departamento {
         super(empleadosDpto);
     }
 
-    //fondoPresupuestal = 20000;
-
     public double fondoPresupuestal() {
         return 20000;
     }

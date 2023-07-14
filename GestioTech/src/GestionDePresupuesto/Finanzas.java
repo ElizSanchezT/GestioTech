@@ -15,10 +15,4 @@ public class Finanzas extends Departamento {
     public double fondoPresupuestal() {
         return 8000;
     }
-
-    /*@Override
-    public void listadeEmpleadosxDpto() {
-
-    }*/
-
 }
