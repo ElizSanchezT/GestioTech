@@ -97,7 +97,7 @@ public class Principal {
                                 do {
                                     // Calcula el presupuesto por cada departamento
                                     UtilitariosConsola.ImprimirTitulo("Gestión de Presupuestos por Departamento");
-                                    UtilitariosConsola.ImprimirMenu(Arrays.asList("Atención al cliente", "Finanzas", "Dirección", "Ventas"));
+                                    UtilitariosConsola.ImprimirMenu(Arrays.asList("Atención al cliente", "Finanzas", "Dirección", "Ventas", "Marketing"));
                                     subOpcion = UtilitariosConsola.LeerEnteroConMensaje("Ingrese opción");
 
                                     switch (subOpcion) {
