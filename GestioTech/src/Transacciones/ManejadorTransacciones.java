@@ -1,7 +1,5 @@
-package LogicaNegocio;
+package Transacciones;
 
-import Entidades.TipoTransaccion;
-import Entidades.Transaccion;
 import Utilitarios.UtilitariosConsola;
 import Utilitarios.UtilitariosEnum;
 
@@ -10,7 +8,6 @@ import java.util.List;
 
 public class ManejadorTransacciones {
     List<Transaccion> transacciones;
-
     public ManejadorTransacciones() {
         transacciones = new ArrayList<>();
     }
@@ -19,10 +16,9 @@ public class ManejadorTransacciones {
         UtilitariosConsola.ImprimirTitulo("Registar transacción", 40);
         System.out.println("Ingrese Tipo");
         TipoTransaccion tipo = UtilitariosEnum.MostrarSeleccionParaEnum(TipoTransaccion.values());
-        String descripcion = UtilitariosConsola.LeerCadenaConMensaje("Ingrese descripción");
-        String fecha = UtilitariosConsola.LeerCadenaConMensaje("Ingrese fecha");
-        double monto = UtilitariosConsola.LeerDecimalConMensaje("Ingrese monto");
-        transacciones.add(new Transaccion(tipo, descripcion, monto, fecha));
+        Transaccion transaccion = TransaccionesFactory.obtenerTransaccion(tipo);
+        transaccion.ingresarDatos();
+        transacciones.add(transaccion);
         System.out.println("Transacción agregada exitosamente");
     }
 
